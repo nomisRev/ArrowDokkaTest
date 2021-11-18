@@ -119,7 +119,9 @@ If you don't need a data-type like [Resource](index.md) but want a function alte
 | Name | Summary |
 |---|---|
 | [Allocate](-allocate/index.md) | [common]<br>class [Allocate](-allocate/index.md)&lt;[A](-allocate/index.md)&gt;(acquire: suspend () -&gt; [A](-allocate/index.md), release: suspend ([A](-allocate/index.md), [ExitCase](../-exit-case/index.md)) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)) : [Resource](index.md)&lt;[A](-allocate/index.md)&gt; |
+| [Bind](-bind/index.md) | [common]<br>~~class~~ [~~Bind~~](-bind/index.md)~~&lt;~~[A](-bind/index.md)~~,~~ [B](-bind/index.md)~~&gt;~~~~(~~~~source~~~~:~~ [Resource](index.md)&lt;[A](-bind/index.md)&gt;~~,~~ ~~f~~~~:~~ ([A](-bind/index.md)) -&gt; [Resource](index.md)&lt;[B](-bind/index.md)&gt;~~)~~ ~~:~~ [~~Resource~~](index.md)~~&lt;~~[B](-bind/index.md)~~&gt;~~ |
 | [Companion](-companion/index.md) | [common]<br>object [Companion](-companion/index.md) |
+| [Defer](-defer/index.md) | [common]<br>~~class~~ [~~Defer~~](-defer/index.md)~~&lt;~~[A](-defer/index.md)~~&gt;~~~~(~~~~resource~~~~:~~ suspend () -&gt; [Resource](index.md)&lt;[A](-defer/index.md)&gt;~~)~~ ~~:~~ [~~Resource~~](index.md)~~&lt;~~[A](-defer/index.md)~~&gt;~~ |
 
 ## Functions
 
@@ -137,11 +139,13 @@ If you don't need a data-type like [Resource](index.md) but want a function alte
 
 | Name |
 |---|
+| [Resource](-bind/index.md) |
 | [Resource](-allocate/index.md) |
+| [Resource](-defer/index.md) |
 
 ## Extensions
 
 | Name | Summary |
 |---|---|
 | [release](../release.md) | [common]<br>infix fun &lt;[A](../release.md)&gt; [Resource](index.md)&lt;[A](../release.md)&gt;.[release](../release.md)(release: suspend ([A](../release.md)) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)): [Resource](index.md)&lt;[A](../release.md)&gt;<br>Composes a [release](../release.md) action to a [Resource.use](use.md) action creating a [Resource](index.md). |
-| [releaseCase](../release-case.md) | [common]<br>infix fun &lt;[A](../release-case.md)&gt; [Resource](index.md)&lt;[A](../release-case.md)&gt;.[releaseCase](../release-case.md)(release: suspend ([A](../release-case.md), [ExitCase](../-exit-case/index.md)) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)): [Resource](index.md)&lt;[A](../release-case.md)&gt;<br>Composes a [releaseCase](../../../../arrow-fx-coroutines/arrow.fx.coroutines/index.md) action to a [Resource.use](use.md) action creating a [Resource](index.md). |
+| [releaseCase](../release-case.md) | [common]<br>infix fun &lt;[A](../release-case.md)&gt; [Resource](index.md)&lt;[A](../release-case.md)&gt;.[releaseCase](../release-case.md)(release: suspend ([A](../release-case.md), [ExitCase](../-exit-case/index.md)) -&gt; [Unit](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)): [Resource](index.md)&lt;[A](../release-case.md)&gt;<br>Composes a [releaseCase](../release-case.md) action to a [Resource.use](use.md) action creating a [Resource](index.md). |

@@ -16,7 +16,7 @@
 
 apply plugin: "org.jetbrains.dokka"
 
-dokkaGfmPartial {
+dokkaJekyllPartial {
 //    outputDirectory = file("${rootDir}/docs")
     dokkaSourceSets {
         if (file("src/commonMain/kotlin").exists()) {
